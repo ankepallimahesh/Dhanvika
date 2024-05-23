@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dhanvika</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        #navbarTogglerDemo03 {
+            justify-content: center; 
+        }
+        @media (min-width: 992px) { 
+            .navbar-nav {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .in {
+            text-align: center;
+            width: 350px;
+            height: 300px;
+            margin-top: 10px;
+        }
+        .inn {
+            height: 100%;
+            width: 100%;
+            border-radius: 300px;
+            border: 5px solid orange;
+        }
+        
+        #sh{
+            animation:shake 3s linear infinite;
+            margin-bottom:40px;
+        }
+        @keyframes shake{
+            0%{
+                transform:rotate(5deg);
+            }
+            25%{
+                transform:rotate(-5deg);
+            }
+            50%{
+                transform:rotate(5deg);
+            }
+            75%{
+                transform:rotate(-5deg);
+            }
+            100%{
+                transform:rotate(5deg);
+            }
+        }
+        .infor{
+            text-align:center;
+            margin-top:5px;
+            margin-bottom:10px;
+            border:3px solid white;
+            box-shadow: 7px 8px 9px rgba(194, 253, 130, 0.5);
+            border-radius:20px;
+            font-weight: bold;
+            color:white;
+            
+            background-image:linear-gradient(45deg,rgba(194, 253, 130, 0.5),rgba(243, 167, 167, 0.5),rgba(12,34,254,0.6))
+        }
+        #sp{
+            padding:30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Dhanvika's Site</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="videos.html">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="invitation.html">Invitation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Developer</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <center>
+        <div class="container-lg">
+            <div class="text-secondary mt-4 display-6" id="sh">
+                Happy Birthday Dhanvika
+            </div>
+            <div class="in">
+                <img src="WhatsApp Image 2024-05-23 at 11.20.08 AM.jpeg" class="inn" alt="Birthday Image">
+            </div>
+        </div>
+    </center>
+    
+
+
+<div class="container-lg" id="sp">
+<div class="container-lg infor">
+    Wishing you a very happy birthday and a splendid year ahead
+</div>
+</div>
+<center>
+<audio controls class="mt-4" id="i">
+    <source src="Happy Birthday DHANVIKA ! - Happy Birthday Song made especially for You!.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</center>
+    <script>
+        function speak() {
+            const text = "Happy birthday Dhaanvika";
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-IND';
+            utterance.pitch = 1;
+            utterance.rate = 1;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        var i = 0;
+        var colors = ["pink", "yellow", "violet", "black", "blue", "Aqua", "fuchsia", "gray", "lime", "maroon", "navy", "olive", "purple", "silver", "teal"];
+
+        function changecolor() {
+            $(".inn").css("border", "8px solid " + colors[i]);
+            i = (i + 1) % colors.length;
+        }
+
+        setInterval(changecolor, 1000);
+
+        document.addEventListener('mousemove', function(e) {
+            var x = e.clientX / innerWidth;
+            var y = e.clientY / innerHeight;
+            var red = Math.round(x * 255);
+            var green = Math.round(y * 255);
+            var blue = Math.round((x + y) * 110);
+            document.body.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+        });
+
+    
+      function ab(){
+        var audio = document.getElementById('birthdayAudio');
+            var playPromise = audio.play();
+      }
+      ab();
+    </script>
+</body>
+</html>

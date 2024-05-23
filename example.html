@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoplay Audio with JavaScript</title>
+</head>
+<body>
+    <h1>Autoplay Audio After User Interaction</h1>
+    <audio id="myAudio">
+        <source src="Happy Birthday DHANVIKA ! - Happy Birthday Song made especially for You!.mp3" type="audio/mpeg">
+        <source src="audiofile.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('myAudio');
+            // Check if the audio is allowed to play
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('Audio started successfully.');
+                }).catch(error => {
+                    console.error('Autoplay prevented:', error);
+                    // Mute and try to play again to ensure autoplay works
+                    audio.muted = true;
+                    audio.play();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
